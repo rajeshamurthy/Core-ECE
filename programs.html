@@ -51,6 +51,30 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
         }
+
+        .journey-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+        }
+
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(129, 140, 248, 0.06));
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .journey-card:hover::before {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -93,36 +117,60 @@
 
     
     <!-- Learning Journey -->
-    <section class="py-8 bg-slate-50">
+    <section class="py-12 bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-6">
-                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-1">Pathway to Success</h2>
-                <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">The Student Journey</h3>
-                <p class="text-slate-600 text-sm">In every Core Domain, our students follow a rigorous pathway to ensure they are industry-ready.</p>
+            <div class="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center">
+                <h2 class="mb-2 text-xs font-bold uppercase tracking-[0.35em] text-brand-600">Pathway to Success</h2>
+                <h3 class="mb-3 text-2xl font-extrabold text-slate-900 md:text-3xl">The Student Journey</h3>
+                <p class="text-sm leading-relaxed text-slate-600 md:text-base">Every core domain is designed as a progressive roadmap where students build technical depth, real-world confidence, and career readiness step by step.</p>
             </div>
 
-            <div class="relative max-w-4xl mx-auto">
-                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-brand-200 -translate-y-1/2 z-0"></div>
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-center relative z-10">
-                    <div class="bg-white rounded-lg p-4 shadow-md border border-brand-100 flex flex-col items-center">
-                        <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-base mb-2 font-bold border-2 border-white shadow-sm">1</div>
+            <div class="relative mx-auto max-w-6xl">
+                <div class="absolute left-0 top-1/2 hidden h-0.5 w-full -translate-y-1/2 bg-gradient-to-r from-brand-200 via-sky-200 to-brand-200 lg:block"></div>
+                <div class="relative z-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
+                    <div class="journey-card rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+                        <!-- <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-lg font-bold">1</div> -->
+                        <div class="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
                         <h4 class="font-bold text-slate-800 text-sm">Training</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-slate-600">Mentor-led sessions, foundational labs, and technical grooming for the core domain.</p>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md border border-brand-100 flex flex-col items-center">
-                        <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-base mb-2 font-bold border-2 border-white shadow-sm">2</div>
+
+                    <div class="journey-card bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+                        <!-- <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-violet-100 text-violet-600 text-lg font-bold">2</div> -->
+                        <div class="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-50 text-violet-600">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
                         <h4 class="font-bold text-slate-800 text-sm">Certifications</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-slate-600">Industry-recognized credentials that validate practical skills and professional readiness.</p>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md border border-brand-100 flex flex-col items-center">
-                        <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-base mb-2 font-bold border-2 border-white shadow-sm">3</div>
+
+                    <div class="journey-card bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+                        <!-- <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-600 text-lg font-bold">3</div> -->
+                        <div class="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
                         <h4 class="font-bold text-slate-800 text-sm">Projects</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-slate-600">Applied problem-solving through real-time projects that connect theory with innovation.</p>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md border border-brand-100 flex flex-col items-center">
-                        <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-base mb-2 font-bold border-2 border-white shadow-sm">4</div>
+
+                    <div class="journey-card bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+                        <!-- <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 text-lg font-bold">4</div> -->
+                        <div class="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-50 text-rose-600">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
                         <h4 class="font-bold text-slate-800 text-sm">Hackathons</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-slate-600">High-energy competitions that sharpen collaboration, creativity, and rapid execution.</p>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md border border-brand-100 flex flex-col items-center">
-                        <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-base mb-2 font-bold border-2 border-white shadow-sm"><i class="fa-solid fa-trophy text-sm"></i></div>
+
+                    <div class="journey-card bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+                        <!-- <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 text-lg font-bold"><i class="fa-solid fa-trophy"></i></div> -->
+                        <div class="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
                         <h4 class="font-bold text-slate-800 text-sm">Placements</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-slate-600">A strong culmination of skills, exposure, and industry alignment leading to successful careers.</p>
                     </div>
                 </div>
             </div>
@@ -133,107 +181,99 @@
         <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -z-10 transform -skew-x-12 origin-top"></div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-1">Academic Excellence</h2>
-                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Core Domains & Tracks</h3>
-                <p class="text-slate-600 text-sm">Our curriculum is designed around four specialized pillars, ensuring
+            <div class="mx-auto mb-10 flex max-w-2xl flex-col items-center text-center">
+                <h2 class="mb-1 text-xs font-bold uppercase tracking-widest text-brand-600">Academic Excellence</h2>
+                <h3 class="mb-2 text-2xl font-extrabold text-slate-900 md:text-3xl">Core Domains & Tracks</h3>
+                <p class="text-sm text-slate-600">Our curriculum is designed around four specialized pillars, ensuring
                     deep technical expertise and industry readiness.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-4">
                 <!-- Domain 1 -->
                 <div
-                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group">
+                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group h-full">
                     <div
                         class="h-10 w-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-microchip"></i>
                     </div>
                     <h4 class="text-lg font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
                         Embedded Systems & IoT</h4>
-                    <ul class="space-y-2 text-xs text-slate-600 font-medium">
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Hardware Design</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Embedded C & Bare
-                            Metal Programming</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Embedded Software
-                            Development</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> RTOS</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Device Driver &
-                            Firmware</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Wired & Wireless
-                            Protocols</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Cloud Connectivity</li>
-                    </ul>
+                    <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">Hardware Design</span>
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">Embedded C & Bare Metal Programming</span>
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">Embedded Software Development</span>
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">RTOS</span>
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">Device Driver & Firmware</span>
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">Wired & Wireless Protocols</span>
+                            <span class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700">Cloud Connectivity</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Domain 2 -->
                 <div
-                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group">
+                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group h-full">
                     <div
                         class="h-10 w-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-memory"></i>
                     </div>
                     <h4 class="text-lg font-bold text-slate-800 mb-3 group-hover:text-purple-600 transition-colors">
                         VLSI Design</h4>
-                    <ul class="space-y-2 text-xs text-slate-600 font-medium">
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> RTL Design using
-                            Verilog</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Design Verification
-                            using System Verilog & UVM</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> DFT</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> ASIC Physical Design</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Analog IC Design</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> layout Design</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Post Silicon
-                            Validation</li>
-                    </ul>
+                    <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">RTL Design using Verilog</span>
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">Design Verification using System Verilog & UVM</span>
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">DFT</span>
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">ASIC Physical Design</span>
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">Analog IC Design</span>
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">Layout Design</span>
+                            <span class="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[11px] font-semibold text-violet-700">Post Silicon Validation</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Domain 3 -->
                 <div
-                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group">
+                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group h-full">
                     <div
                         class="h-10 w-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-network-wired"></i>
                     </div>
                     <h4 class="text-lg font-bold text-slate-800 mb-3 group-hover:text-emerald-600 transition-colors">
                         Networking & IT Infrastructure</h4>
-                    <ul class="space-y-2 text-xs text-slate-600 font-medium">
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Network Devices &
-                            Protocols</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Network
-                            Infrastructure & Management</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Automation in
-                            Networking</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> DevOps</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> AWS/Azure Cloud
-                            Infrastructure</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Enterprise Network
-                            Security</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Threat Detection &
-                            Security Monitoring</li>
-                    </ul>
+                    <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">Network Devices & Protocols</span>
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">Network Infrastructure & Management</span>
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">Automation in Networking</span>
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">DevOps</span>
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">AWS/Azure Cloud Infrastructure</span>
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">Enterprise Network Security</span>
+                            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">Threat Detection & Security Monitoring</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Domain 4 -->
                 <div
-                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group">
+                    class="bg-white border border-slate-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group h-full">
                     <div
                         class="h-10 w-10 bg-rose-50 text-rose-600 rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid fa-satellite-dish"></i>
                     </div>
                     <h4 class="text-lg font-bold text-slate-800 mb-3 group-hover:text-rose-600 transition-colors">
                         Signal Processing & Communication </h4>
-                    <p class="text-slate-600 leading-relaxed mb-3 text-xs">Advanced digital signal handling, DSP processors, AI
-                        in signal processing, and modern 5G/6G RF architectures.</p>
-                    <ul class="space-y-2 text-xs text-slate-600 font-medium">
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> DSP, MATLAB, PYTHON</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> RF System Design,</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> Antenna Design using
-                            HFSS, CSD</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> 5G / 6G Networks
-                            architecture</li>
-                        <li class="flex"><i class="fa-solid fa-check text-green-500 mt-0.5 mr-2"></i> EMI/EMC</li>
-                    </ul>
+                    <p class="text-slate-600 leading-relaxed mb-3 text-xs"></p>
+                    <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700">DSP, MATLAB, Python</span>
+                            <span class="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700">RF System Design</span>
+                            <span class="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700">Antenna Design using HFSS, CSD</span>
+                            <span class="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700">5G / 6G Network Architecture</span>
+                            <span class="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700">EMI/EMC</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
