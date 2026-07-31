@@ -167,3 +167,193 @@ body {
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
+
+/* Blue, black, and yellow premium theme */
+:root {
+    --ece-black: #050814;
+    --ece-black-soft: #0a1020;
+    --ece-panel: #0f172a;
+    --ece-panel-soft: #111c34;
+    --ece-blue: #0ea5e9;
+    --ece-blue-deep: #1d4ed8;
+    --ece-yellow: #facc15;
+    --ece-yellow-deep: #f59e0b;
+    --ece-text: #f8fafc;
+    --ece-muted: #cbd5e1;
+    --ece-border: rgba(250, 204, 21, 0.22);
+}
+
+html {
+    background: var(--ece-black);
+}
+
+body {
+    background:
+        radial-gradient(circle at 8% 8%, rgba(14, 165, 233, 0.24), transparent 28%),
+        radial-gradient(circle at 92% 12%, rgba(250, 204, 21, 0.16), transparent 24%),
+        linear-gradient(135deg, var(--ece-black) 0%, #071226 48%, #0a1020 100%) !important;
+    color: var(--ece-text) !important;
+}
+
+header {
+    background: rgba(5, 8, 20, 0.9) !important;
+    border-bottom: 1px solid rgba(250, 204, 21, 0.18);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28) !important;
+}
+
+header a.bg-white,
+footer .bg-white {
+    background: #ffffff !important;
+    border: 1px solid rgba(250, 204, 21, 0.55);
+}
+
+nav a {
+    color: var(--ece-muted) !important;
+}
+
+nav a:hover,
+nav a.text-brand-600,
+.text-brand-600,
+.text-brand-500 {
+    color: var(--ece-yellow) !important;
+}
+
+.hero-bg {
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.34), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(250, 204, 21, 0.22), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #0b1f45 52%, #111827 100%) !important;
+}
+
+.hero-bg::before {
+    background-image:
+        linear-gradient(rgba(250, 204, 21, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.12) 1px, transparent 1px) !important;
+}
+
+.hero-bg .text-transparent {
+    background-image: linear-gradient(90deg, #facc15, #38bdf8, #f59e0b) !important;
+}
+
+.bg-slate-50,
+.bg-white,
+.from-slate-50,
+.to-white,
+.via-white,
+.from-slate-50.via-white.to-slate-100 {
+    background-color: transparent !important;
+}
+
+section:not(.hero-bg),
+.section-panel,
+.glass-card,
+.journey-card,
+.domain-card,
+[class*="bg-white"].rounded-xl,
+[class*="bg-white"].rounded-2xl,
+[class*="bg-white"].rounded-3xl,
+.break-inside-avoid {
+    background:
+        linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(7, 18, 38, 0.92)) !important;
+    border-color: var(--ece-border) !important;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.glass-card {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.text-slate-900,
+.text-slate-800,
+.text-white {
+    color: var(--ece-text) !important;
+}
+
+.text-slate-600,
+.text-slate-500,
+.text-slate-400,
+.text-slate-300 {
+    color: var(--ece-muted) !important;
+}
+
+.bg-brand-600,
+.hover\:bg-brand-500:hover,
+.group-hover\:bg-blue-600:hover,
+.group:hover .group-hover\:bg-blue-600 {
+    background: linear-gradient(135deg, var(--ece-blue-deep), var(--ece-blue)) !important;
+    color: #ffffff !important;
+}
+
+.bg-brand-100,
+.bg-blue-100,
+.bg-blue-50,
+.bg-cyan-100,
+.bg-violet-100,
+.bg-purple-50,
+.bg-amber-100,
+.bg-amber-50,
+.bg-emerald-50,
+.bg-emerald-100,
+.bg-rose-50,
+.bg-red-100,
+.bg-green-100 {
+    background: rgba(250, 204, 21, 0.12) !important;
+    color: var(--ece-yellow) !important;
+    border-color: rgba(250, 204, 21, 0.28) !important;
+}
+
+.border-slate-100,
+.border-slate-200,
+.border-white\/10,
+.border-white\/20,
+.border-brand-400\/30,
+.border-blue-200,
+.border-violet-200,
+.border-emerald-200,
+.border-rose-200 {
+    border-color: var(--ece-border) !important;
+}
+
+.rounded-full.bg-brand-500\/20,
+.bg-white\/10,
+.bg-white\/5,
+.bg-slate-50\/80,
+.bg-slate-950 {
+    background: rgba(14, 165, 233, 0.13) !important;
+    border-color: rgba(14, 165, 233, 0.32) !important;
+}
+
+.rounded-full,
+.inline-flex.rounded-full {
+    border-color: rgba(250, 204, 21, 0.32) !important;
+}
+
+.shadow-brand-500\/30 {
+    box-shadow: 0 16px 32px rgba(14, 165, 233, 0.28), 0 0 0 1px rgba(250, 204, 21, 0.2) !important;
+}
+
+.hover\:shadow-lg:hover,
+.hover\:shadow-xl:hover,
+.domain-card:hover,
+.journey-card:hover,
+.company-logo-card:hover {
+    box-shadow: 0 24px 48px rgba(14, 165, 233, 0.18), 0 0 0 1px rgba(250, 204, 21, 0.34) !important;
+}
+
+.company-logo-card {
+    background: #ffffff !important;
+}
+
+footer {
+    background: #020617 !important;
+    border-top-color: rgba(250, 204, 21, 0.24) !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--ece-blue), var(--ece-yellow));
+}
