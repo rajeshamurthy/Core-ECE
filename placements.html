@@ -105,8 +105,8 @@
                     <i class="fa-solid fa-chart-line mr-1"></i>Batch 2022-26
                 </h2>
                 <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-1">Placement Analysis with Domain</h3>
-                <p class="text-slate-500 text-sm">A comprehensive visual breakdown of placement performance across all
-                    five core domains.</p>
+                <p class="text-slate-500 text-sm">A comprehensive visual breakdown of placement performance across
+                    the grouped placement tracks.</p>
             </div>
 
             <!-- Summary Stat Cards -->
@@ -179,24 +179,24 @@
 
             <!-- Domain-wise Radial Progress Cards -->
             <h4 class="text-base font-bold text-slate-800 mb-4 text-center"><i
-                    class="fa-solid fa-bullseye text-brand-500 mr-1"></i>Domain-wise Placement Rate</h4>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-                <!-- IT -->
+                    class="fa-solid fa-bullseye text-brand-500 mr-1"></i>Track-wise Placement Rate</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <!-- IT + Networking + Moved to Core -->
                 <div
                     class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 group">
                     <div class="relative w-20 h-20 mx-auto mb-3">
                         <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
                             <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10" />
                             <circle cx="60" cy="60" r="52" fill="none" stroke="#3b82f6" stroke-width="10"
-                                stroke-dasharray="326.73" stroke-dashoffset="13.07" stroke-linecap="round"
+                                stroke-dasharray="326.73" stroke-dashoffset="19.60" stroke-linecap="round"
                                 class="radial-progress transition-all duration-1000" />
                         </svg>
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="text-base font-extrabold text-slate-800">96%</span>
+                            <span class="text-base font-extrabold text-slate-800">94%</span>
                         </div>
                     </div>
                     <h5 class="font-bold text-slate-800 text-base">IT</h5>
-                    <p class="text-xs text-slate-400 mt-0.5">52 / 54</p>
+                    <p class="text-xs text-slate-400 mt-0.5">116 / 123</p>
                 </div>
                 <!-- ESIOT -->
                 <div
@@ -232,46 +232,12 @@
                     <h5 class="font-bold text-slate-800 text-base">VLSI</h5>
                     <p class="text-xs text-slate-400 mt-0.5">14 / 14</p>
                 </div>
-                <!-- Networking -->
-                <div
-                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 group">
-                    <div class="relative w-20 h-20 mx-auto mb-3">
-                        <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                            <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10" />
-                            <circle cx="60" cy="60" r="52" fill="none" stroke="#06b6d4" stroke-width="10"
-                                stroke-dasharray="326.73" stroke-dashoffset="0" stroke-linecap="round"
-                                class="radial-progress transition-all duration-1000" />
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="text-base font-extrabold text-slate-800">100%</span>
-                        </div>
-                    </div>
-                    <h5 class="font-bold text-slate-800 text-base">Networking</h5>
-                    <p class="text-xs text-slate-400 mt-0.5">19 / 19</p>
-                </div>
-                <!-- Moved to Core -->
-                <div
-                    class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 group">
-                    <div class="relative w-20 h-20 mx-auto mb-3">
-                        <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                            <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10" />
-                            <circle cx="60" cy="60" r="52" fill="none" stroke="#f59e0b" stroke-width="10"
-                                stroke-dasharray="326.73" stroke-dashoffset="32.67" stroke-linecap="round"
-                                class="radial-progress transition-all duration-1000" />
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="text-base font-extrabold text-slate-800">90%</span>
-                        </div>
-                    </div>
-                    <h5 class="font-bold text-slate-800 text-base">Moved to Core</h5>
-                    <p class="text-xs text-slate-400 mt-0.5">45 / 50</p>
-                </div>
             </div>
 
             <!-- Horizontal Bar Chart — Placement Percentage -->
             <div class="bg-white rounded-xl p-5 shadow-md border border-slate-100">
                 <h4 class="text-base font-bold text-slate-800 mb-4"><i
-                        class="fa-solid fa-percent text-brand-500 mr-1"></i>Placement Percentage by Domain</h4>
+                        class="fa-solid fa-percent text-brand-500 mr-1"></i>Placement Percentage by Track</h4>
                 <div class="relative" style="height:220px;">
                     <canvas id="hBarChart"></canvas>
                 </div>
@@ -396,142 +362,198 @@
 
             <!-- Industry Partners / Recruiting Companies -->
             <div class="bg-white/5 border border-white/10 rounded-xl p-5 mb-10">
-                <h4 class="text-center font-bold text-brand-200 mb-5 uppercase tracking-widest text-xs">Key Industry Partners</h4>
+                <h4 class="text-center font-bold text-brand-200 mb-5 uppercase tracking-widest text-xs">Key Industry
+                    Partners</h4>
                 <div id="company-logos" class="grid company-logo-grid gap-3 items-stretch justify-items-stretch">
-                    <!-- Infinite Solutions -->
-                    <div class="company-logo-card" title="Infinite Solutions">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Fiserv_logo.svg" alt="Infinite Solutions" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Infinite</span>
+                    <div class="company-logo-card" title="Silicon Labs">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/05/silicon_labs_Logo.jpg"
+                            alt="Silicon Labs" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Silicon Labs</span>
                     </div>
-                    <!-- BCT -->
-                    <div class="company-logo-card" title="BCT">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Cognizant_technology_solutions_logo.svg" alt="BCT" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">BCT</span>
+                    <div class="company-logo-card" title="BP">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/bp.jpg" alt="BP"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">BP</span>
                     </div>
-                    <!-- UST Global -->
-                    <div class="company-logo-card" title="UST Global">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/UST_Logo_2021.svg" alt="UST Global" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">UST Global</span>
+                    <div class="company-logo-card" title="Cadence">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/cadence.jpg" alt="Cadence"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Cadence</span>
                     </div>
-                    <!-- Tessolve -->
-                    <div class="company-logo-card" title="Tessolve">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Siemens_AG_logo.svg" alt="Tessolve" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Tessolve</span>
+                    <div class="company-logo-card" title="CommScope">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/commscope.jpg" alt="CommScope"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">CommScope</span>
                     </div>
-                    <!-- Recynergy -->
-                    <div class="company-logo-card" title="Recynergy">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Suez_logo.svg" alt="Recynergy" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Recynergy</span>
+                    <div class="company-logo-card" title="ABB">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/09/abb-logo.png" alt="ABB"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">ABB</span>
                     </div>
-                    <!-- Presidio -->
-                    <div class="company-logo-card" title="Presidio">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Presidio_logo.svg" alt="Presidio" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">Presidio</span>
+                    <div class="company-logo-card" title="Parallel Wireless">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Parallel-wireless-1.jpg"
+                            alt="Parallel Wireless" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Parallel Wireless</span>
                     </div>
-                    <!-- Electro Solve -->
-                    <div class="company-logo-card" title="Electro Solve">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/General_Electric_logo.svg" alt="Electro Solve" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">ElectroSolve</span>
+                    <div class="company-logo-card" title="Philips">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/philips-1.jpg" alt="Philips"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Philips</span>
                     </div>
-                    <!-- Zaalima Development -->
-                    <div class="company-logo-card" title="Zaalima Development">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Oracle_Corporation_logo.svg" alt="Zaalima Development" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Zaalima</span>
+                    <div class="company-logo-card" title="Giga">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/giga.jpg" alt="Giga"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Giga</span>
                     </div>
-                    <!-- Broadridge -->
-                    <div class="company-logo-card" title="Broadridge">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Broadridge_Financial_Solutions_logo.svg" alt="Broadridge" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">Broadridge</span>
+                    <div class="company-logo-card" title="MIC">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/mic.jpg" alt="MIC"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">MIC</span>
                     </div>
-                    <!-- Jocata -->
-                    <div class="company-logo-card" title="Jocata">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/JPMorgan_Chase_Logo_2008_2023.svg" alt="Jocata" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Jocata</span>
+                    <div class="company-logo-card" title="AMD">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/07/amd.png" alt="AMD"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">AMD</span>
                     </div>
-                    <!-- HCL -->
-                    <div class="company-logo-card" title="HCL">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/HCL_Technologies_logo.svg" alt="HCL" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">HCL</span>
+                    <div class="company-logo-card" title="Toshiba">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/toshiba.jpg" alt="Toshiba"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Toshiba</span>
                     </div>
-                    <!-- Brakes India -->
-                    <div class="company-logo-card" title="Brakes India">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Brembo_logo.svg" alt="Brakes India" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Brakes India</span>
+                    <div class="company-logo-card" title="Comcast">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/comcast_logo.jpg" alt="Comcast"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Comcast</span>
                     </div>
-                    <!-- Rently -->
-                    <div class="company-logo-card" title="Rently">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Rently" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Rently</span>
+                    <div class="company-logo-card" title="EmbedUR">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/embedur.jpg" alt="EmbedUR"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">EmbedUR</span>
                     </div>
-                    <!-- AT&T -->
-                    <div class="company-logo-card" title="AT&T">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/AT%26T_logo_2016.svg" alt="AT&T" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">AT&amp;T</span>
+                    <div class="company-logo-card" title="HP">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/hp_logo.jpg" alt="HP"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">HP</span>
                     </div>
-                    <!-- Cognizant -->
-                    <div class="company-logo-card" title="Cognizant">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Cognizant_logo_2022.svg" alt="Cognizant" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">Cognizant</span>
+                    <div class="company-logo-card" title="MulticoreWare">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Multicoreware.jpg" alt="MulticoreWare"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">MulticoreWare</span>
                     </div>
-                    <!-- Teceze -->
-                    <div class="company-logo-card" title="Teceze">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Tech_Mahindra_New_Logo.svg" alt="Teceze" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Teceze</span>
+                    <div class="company-logo-card" title="Schneider Electric">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/se.jpg" alt="Schneider Electric"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Schneider Electric</span>
                     </div>
-                    <!-- Renacon -->
-                    <div class="company-logo-card" title="Renacon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Renault_2021.svg" alt="Renacon" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Renacon</span>
+                    <div class="company-logo-card" title="LU">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/lu-1.jpg" alt="LU"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">LU</span>
                     </div>
-                    <!-- Finastra -->
-                    <div class="company-logo-card" title="Finastra">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Fidelity_National_Information_Services_logo.svg" alt="Finastra" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Finastra</span>
+                    <div class="company-logo-card" title="NB">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/nb.jpg" alt="NB"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">NB</span>
                     </div>
-                    <!-- F5 Networks -->
-                    <div class="company-logo-card" title="F5 Networks">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/F5_Networks_logo.svg" alt="F5 Networks" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">F5 Networks</span>
+                    <div class="company-logo-card" title="ZED Digital">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/ZED-Digital.jpg" alt="ZED Digital"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">ZED Digital</span>
                     </div>
-                    <!-- Cloudvice -->
-                    <div class="company-logo-card" title="Cloudvice">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Salesforce.svg" alt="Cloudvice" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Cloudvice</span>
+                    <div class="company-logo-card" title="Data Patterns">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/data.jpg" alt="Data Patterns"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Data Patterns</span>
                     </div>
-                    <!-- Kasadara Technologies -->
-                    <div class="company-logo-card" title="Kasadara Technologies">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Kasadara Technologies" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Kasadara</span>
+                    <div class="company-logo-card" title="Cerium Systems">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/cerium.jpg" alt="Cerium Systems"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Cerium Systems</span>
                     </div>
-                    <!-- Danfoss -->
-                    <div class="company-logo-card" title="Danfoss">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Danfoss_logo.svg" alt="Danfoss" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">Danfoss</span>
+                    <div class="company-logo-card" title="Planys">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Planys-logo.jpg" alt="Planys"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Planys</span>
                     </div>
-                    <!-- Codinmart -->
-                    <div class="company-logo-card" title="Codinmart">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/LTIMindtree_Logo.svg" alt="Codinmart" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Codingmart</span>
+                    <div class="company-logo-card" title="Siemens">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/09/Siemens.jpg" alt="Siemens"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Siemens</span>
                     </div>
-                    <!-- Univision -->
-                    <div class="company-logo-card" title="Univision">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Univision_logo_2019.svg" alt="Univision" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">Univision</span>
+                    <div class="company-logo-card" title="VVDN">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/vvdn-logo.jpg" alt="VVDN"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">VVDN</span>
                     </div>
-                    <!-- LTI Mindtree -->
-                    <div class="company-logo-card" title="LTI Mindtree">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/LTIMindtree_Logo.svg" alt="LTI Mindtree" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">LTI</span>
+                    <div class="company-logo-card" title="Mitsubishi Electric">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/06/mitsubishi-electric-logo.jpg"
+                            alt="Mitsubishi Electric" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Mitsubishi Electric</span>
                     </div>
-                    <!-- Gnani AI -->
-                    <div class="company-logo-card" title="Gnani AI">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Cognizant_technology_solutions_logo.svg" alt="Gnani AI" class="max-h-8 max-w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span class="text-xs text-slate-800 font-extrabold hidden">Gnani.AI</span>
+                    <div class="company-logo-card" title="SY">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/sy.jpg" alt="SY"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">SY</span>
                     </div>
-                    <!-- BMW -->
-                    <div class="company-logo-card" title="BMW">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW" class="max-h-8 max-w-full object-contain">
-                        <span class="company-logo-fallback">BMW</span>
+                    <div class="company-logo-card" title="Plintron">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/plintron.jpg" alt="Plintron"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Plintron</span>
+                    </div>
+                    <div class="company-logo-card" title="SAN">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/san.jpg" alt="SAN"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">SAN</span>
+                    </div>
+                    <div class="company-logo-card" title="NS">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/ns.jpg" alt="NS"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">NS</span>
+                    </div>
+                    <div class="company-logo-card" title="UNI">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/uni.jpg" alt="UNI"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">UNI</span>
+                    </div>
+                    <div class="company-logo-card" title="JI">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/07/ji.jpg" alt="JI"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">JI</span>
+                    </div>
+                    <div class="company-logo-card" title="Lennox">
+                        <img src="https://sece.ac.in/wp-content/uploads/2024/12/Lennox-logo-new-.webp" alt="Lennox"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Lennox</span>
+                    </div>
+                    <div class="company-logo-card" title="UltraTech">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/Ultratech-new-logo-.webp"
+                            alt="UltraTech" class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">UltraTech</span>
+                    </div>
+                    <div class="company-logo-card" title="PRS Group">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/PRS-Group-logo-.webp" alt="PRS Group"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">PRS Group</span>
+                    </div>
+                    <div class="company-logo-card" title="Quadra">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/Quadra.webp" alt="Quadra"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Quadra</span>
+                    </div>
+                    <div class="company-logo-card" title="Ignitarium">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/02/Ignitarium-.webp" alt="Ignitarium"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Ignitarium</span>
+                    </div>
+                    <div class="company-logo-card" title="JSE">
+                        <img src="https://sece.ac.in/wp-content/uploads/2025/05/jse.jpg" alt="JSE"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">JSE</span>
+                    </div>
+                    <div class="company-logo-card" title="Universion">
+                        <img src="https://sece.ac.in/wp-content/uploads/2026/03/universion.png" alt="Universion"
+                            class="max-h-8 max-w-full object-contain">
+                        <span class="company-logo-fallback">Universion</span>
                     </div>
                 </div>
             </div>
@@ -540,29 +562,38 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
                     <div class="flex justify-between items-start mb-3">
-                        <div class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-green-500/30">Hardware Verification</div>
+                        <div
+                            class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-green-500/30">
+                            Hardware Verification</div>
                         <span class="text-brand-300 font-bold text-sm">18.5 LPA</span>
                     </div>
                     <h5 class="text-sm font-bold mb-1">Tier-1 Semiconductor</h5>
-                    <p class="text-xs text-brand-200">Internship + Full-time offer converted through SIH Hackathon performance.</p>
+                    <p class="text-xs text-brand-200">Internship + Full-time offer converted through SIH Hackathon
+                        performance.</p>
                 </div>
 
                 <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
                     <div class="flex justify-between items-start mb-3">
-                        <div class="bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-purple-500/30">SoC Design</div>
+                        <div
+                            class="bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-purple-500/30">
+                            SoC Design</div>
                         <span class="text-brand-300 font-bold text-sm">14.0 LPA</span>
                     </div>
                     <h5 class="text-sm font-bold mb-1">Global Tech Giant</h5>
-                    <p class="text-xs text-brand-200">Selected after 6-month external internship at the Bangalore R&D facility.</p>
+                    <p class="text-xs text-brand-200">Selected after 6-month external internship at the Bangalore R&D
+                        facility.</p>
                 </div>
 
                 <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
                     <div class="flex justify-between items-start mb-3">
-                        <div class="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-orange-500/30">Firmware Spec.</div>
+                        <div
+                            class="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-orange-500/30">
+                            Firmware Spec.</div>
                         <span class="text-brand-300 font-bold text-sm">8.5 LPA</span>
                     </div>
                     <h5 class="text-sm font-bold mb-1">Automotive MNC</h5>
-                    <p class="text-xs text-brand-200">Recruited based on prototype development at SECE Automotive Labs.</p>
+                    <p class="text-xs text-brand-200">Recruited based on prototype development at SECE Automotive Labs.
+                    </p>
                 </div>
             </div>
         </div>
@@ -583,8 +614,10 @@
                     </div>
                 </div>
                 <div class="text-center md:text-right">
-                    <p class="text-xs mb-1">Empowering the next generation of electronics and communication innovators.</p>
-                    <p class="text-[10px] opacity-50">&copy; 2024 Sri Eshwar College of Engineering. All rights reserved.</p>
+                    <p class="text-xs mb-1">Empowering the next generation of electronics and communication innovators.
+                    </p>
+                    <p class="text-[10px] opacity-50">&copy; 2024 Sri Eshwar College of Engineering. All rights
+                        reserved.</p>
                 </div>
             </div>
         </div>
@@ -638,14 +671,22 @@
             };
 
             logoCards.forEach(card => {
-                const image = card.querySelector('img');
-                if (!image) {
-                    return;
-                }
-
-                const label = card.getAttribute('title') || image.alt || 'Company';
+                let image = card.querySelector('img');
+                const label = card.getAttribute('title') || image?.alt || 'Company';
                 const fallbackLogo = createFallbackLogo(label);
                 const fallbackText = card.querySelector('.company-logo-fallback, span:last-child');
+
+                if (!image) {
+                    image = document.createElement('img');
+                    image.src = fallbackLogo;
+                    image.alt = `${label} logo`;
+                    image.className = 'max-h-10 max-w-full object-contain';
+                    card.prepend(image);
+                    if (fallbackText) {
+                        fallbackText.style.display = 'none';
+                    }
+                    return;
+                }
 
                 image.loading = 'lazy';
                 image.decoding = 'async';
